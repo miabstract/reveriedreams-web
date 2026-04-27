@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight-base: #0a0612;
+  --color-midnight-edge: #1a0e2e;
+  --color-text-primary: #f5f3ff;
+  --color-text-secondary: #a8a0c7;
+  --color-text-tertiary: #6b6088;
+  --color-accent-glow: #b59cff;
+  --color-accent-secondary: #8b7ac4;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #0a0612;
+  --foreground: #f5f3ff;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .orb,
+  .icon-halo {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+body {
+  background:
+    radial-gradient(ellipse at top, #1a0e2e 0%, transparent 55%),
+    radial-gradient(ellipse at bottom right, #1a0e2e 0%, transparent 60%),
+    #0a0612;
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-accent-glow);
+}
+
+.section-heading {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  color: var(--color-text-secondary);
+}
+
+.orb {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.orb::before,
+.orb::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+.orb::before {
+  width: 38rem;
+  height: 38rem;
+  left: 50%;
+  top: 50%;
+  background: radial-gradient(circle, #b59cff 0%, rgba(181, 156, 255, 0) 70%);
+  opacity: 0.55;
+  transform: translate(-50%, -50%);
+  animation: drift 22s ease-in-out infinite alternate;
+}
+.orb::after {
+  width: 28rem;
+  height: 28rem;
+  left: 30%;
+  top: 65%;
+  background: radial-gradient(circle, #8b7ac4 0%, rgba(139, 122, 196, 0) 70%);
+  opacity: 0.35;
+  animation: drift-slow 30s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0%   { transform: translate(-55%, -52%) scale(1); }
+  50%  { transform: translate(-45%, -48%) scale(1.08); }
+  100% { transform: translate(-50%, -55%) scale(1.02); }
+}
+
+@keyframes drift-slow {
+  0%   { transform: translate(-10%, 0%) scale(1); }
+  100% { transform: translate(15%, -10%) scale(1.12); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes halo {
+  0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 0.75; transform: translate(-50%, -50%) scale(1.06); }
+}
+.icon-halo {
+  animation: halo 6s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(181, 156, 255, 0.35);
+  color: #ffffff;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Legal prose helpers (used by Privacy / Terms) */
+.legal-prose strong {
+  color: #f5f3ff;
+  font-weight: 500;
+}
+.legal-prose em {
+  color: #c9c0e3;
+  font-style: italic;
+}
+.legal-h {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: #f5f3ff;
+  margin-top: 2.25rem;
+  margin-bottom: 0.25rem;
+}
+.legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.legal-list > li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+.legal-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.4rem;
+  height: 1px;
+  background: #b59cff;
+  opacity: 0.7;
+}
+.legal-link {
+  color: #b59cff;
+  border-bottom: 1px solid rgba(181, 156, 255, 0.35);
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.legal-link:hover {
+  color: #f5f3ff;
+  border-bottom-color: rgba(245, 243, 255, 0.6);
+}

@@ -29,30 +29,16 @@ export default function Showcase() {
         </Reveal>
 
         <Reveal delay={150}>
-          {/* PRE-LAUNCH: keep the line below. */}
-          <p className="mt-12 text-[0.72rem] uppercase tracking-[0.32em] text-text-secondary">
-            Available soon for iOS
-          </p>
-
-          {/*
-            POST-LAUNCH SWAP — when Apple approves, do exactly this:
-              1. Delete the <p> block above (the "Available soon for iOS" line).
-              2. Uncomment the <a> block below (remove this enclosing comment).
-              3. git add, commit, push. Vercel auto-deploys in ~30 sec.
-
-            App Store Apple ID: 6765586926
-
           <a
-            href="https://apps.apple.com/app/id6765586926"
+            href="https://apps.apple.com/app/reverie-dream-canvas/id6765586926"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-12 inline-flex h-12 items-center justify-center rounded-full px-7 text-[0.72rem] uppercase tracking-[0.32em] text-text-primary border border-accent-glow/40 bg-accent-glow/[0.08] hover:bg-accent-glow/[0.14] hover:border-accent-glow/70 transition-all"
+            className="group mt-12 inline-flex h-12 items-center justify-center rounded-full px-7 text-[0.72rem] uppercase tracking-[0.32em] text-text-primary border border-accent-glow/40 bg-accent-glow/[0.08] hover:bg-accent-glow/[0.14] hover:border-accent-glow/70 transition-all"
           >
             <span className="opacity-90 group-hover:opacity-100">
               Download on the App Store
             </span>
           </a>
-          */}
         </Reveal>
       </div>
     </section>

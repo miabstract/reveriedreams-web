@@ -30,7 +30,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-5 max-w-xl text-sm md:text-base font-light leading-relaxed text-text-secondary">
-          An AI-powered dream journal that turns the way you remember
+          A dream journal that turns the way you remember
           into something you can return to.
         </p>
 

@@ -20,8 +20,10 @@ export default function Hero() {
 
         <h1 className="sr-only">Reverie Dreams — an AI-powered dream journal</h1>
 
+        <p className="eyebrow mt-8">Now on the App Store ✦</p>
+
         <p
-          className="mt-10 font-display text-2xl md:text-3xl font-light text-text-primary tracking-wide"
+          className="mt-5 font-display text-2xl md:text-3xl font-light text-text-primary tracking-wide"
           style={{ letterSpacing: "0.02em" }}
         >
           Record your dreams. See them again.
@@ -34,15 +36,17 @@ export default function Hero() {
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
           <a
-            href="mailto:hello@reveriedreams.com?subject=Notify%20me%20about%20Reverie%20launch"
+            href="https://apps.apple.com/app/reverie-dream-canvas/id6765586926"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex h-12 items-center justify-center rounded-full px-7 text-[0.72rem] uppercase tracking-[0.28em] text-text-primary border border-accent-glow/40 bg-accent-glow/[0.08] hover:bg-accent-glow/[0.14] hover:border-accent-glow/70 transition-all"
           >
             <span className="opacity-90 group-hover:opacity-100">
-              Notify me at launch
+              Download on the App Store
             </span>
           </a>
           <a
-            href="#about"
+            href="#features"
             className="inline-flex h-12 items-center justify-center rounded-full px-7 text-[0.72rem] uppercase tracking-[0.28em] text-text-secondary hover:text-text-primary border border-white/10 hover:border-white/25 transition-all"
           >
             Learn more
